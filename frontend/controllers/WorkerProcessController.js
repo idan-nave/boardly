@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const addWorkerBtn = document.getElementById("add-worker-btn");
     const saveBtn = document.getElementById("save-btn");
     
-    // Fetch workers data when the page loads
-    fetch("/worker/getWorkers")
+    // Fetch workers current status out of all the teams stages. (stage id)
+    fetch("/worker/getCurrentStatus")
         .then(response => response.json())
         .then(data => renderWorkers(data))
         .catch(error => console.error("Error fetching workers:", error));
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Add new worker functionality (fake data for now)
+    // Terminate Worker - DELETES IT FROM DB
     addWorkerBtn.addEventListener("click", function () {
         const newWorker = {
             id: Date.now(),  // Temporary ID generation
@@ -76,8 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
             note: ""
         };
 
-        fetch("/worker/addWorker", {
-            method: "POST",
+        fetch("/worker/deleteWorker", {
+            method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
+        // update a workers designated team and concats currentNote of approval to the worker notes field.
         fetch("/worker/saveChanges", {
             method: "POST",
             headers: {
