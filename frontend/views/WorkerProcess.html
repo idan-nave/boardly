@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Worker Status Management</title>
-    <link rel="stylesheet" href="/frontend/assets/css/teamWorkersEdit.css">
+    <link rel="stylesheet" href="../assets/css/WorkerProcess.css">
 </head>
 <body>
 
@@ -12,35 +12,38 @@
         
         <!-- Header Section -->
         <header id="title">
-            <h1>Team: Example Team</h1> <!-- Display Team Name -->
+            <h1>Worker: Onbooarding Process</h1> <!-- Display Team Name -->
             <p>Manage workers' onboarding statuses</p>
+            <p>Designated Team: Example Team Name</p> <!-- Display Designated Team -->
         </header>
 
         <!-- Process Selection Section -->
         <div class="process-selection">
-            <label for="process">Choose Process:</label>
+            <label for="process">Designated Team:</label>
             <select id="process">
-                <option value="1">Interview</option>
-                <option value="2">Quiz</option>
-                <option value="3">Laptop Acquiring</option>
+                <option value="1">KAFA</option>
+                <option value="2">DEVOPS</option>
+                <option value="3">Toilet Cleaning</option>
             </select>
         </div>
 
+
         <!-- Workers List Section -->
         <div class="worker-list">
-            <h2>Team Workers</h2>
+            <h2>Onboarding Stages</h2>
             <ul id="worker-list">
                 <!-- Worker List Items Will Go Here -->
             </ul>
         </div>
 
-        <!-- Add Worker Button -->
-        <button id="add-worker-btn" class="action-btn">Add New Worker</button>
+        <!-- Terminate Worker Button -->
+        <button id="add-worker-btn" class="action-btn">Terminate Worker Process</button>
 
         <!-- Save Data Button -->
         <button id="save-btn" class="action-btn">Save Changes</button>
     </div> 
 
-    <script src="../../frontend/assets/js/teamWorkersEdit.js"></script> <!-- Include JavaScript for interaction -->
+    <script src="../assets/js/WorkerProcess.js"></script> <!-- Include JavaScript for interaction -->
+    <script src="../controllers/WorkerProcessController.js"></script> <!-- Include JavaScript for Controller -->
 </body>
 </html>

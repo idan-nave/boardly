@@ -59,6 +59,49 @@ header p {
     width: 60%;
 }
 
+/* Stage Sidebar */
+.stage-sidebar {
+    width: 20%;
+    padding: 20px;
+    border-radius: 8px;
+    background: #f4f4f4;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    float: left;
+}
+
+.stage-sidebar h2 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.stage-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.stage-sidebar .stage {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.stage-sidebar .stage.completed {
+    background-color: #27ae60;
+    color: white;
+}
+
+.stage-sidebar .stage.active {
+    background-color: #f39c12;
+    color: white;
+}
+
+.stage-sidebar .stage:hover {
+    opacity: 0.8;
+}
+
 /* Workers List Section */
 .worker-list {
     margin-bottom: 20px;

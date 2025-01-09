@@ -3,92 +3,71 @@ document.addEventListener("DOMContentLoaded", function () {
     const addWorkerBtn = document.getElementById("add-worker-btn");
     const saveBtn = document.getElementById("save-btn");
     
-    // Sample data to show in the list
+    // Simulated data for workers
     const workers = [
-        {
-            id: 1,
-            name: "John Doe",
-            team: "Development",
-            currentStage: "Interview",
-            status: "Pending",
-            note: ""
-        },
-        {
-            id: 2,
-            name: "Jane Smith",
-            team: "Marketing",
-            currentStage: "Quiz",
-            status: "Pending",
-            note: ""
-        },
+        { id: 1, name: "Alice", stage: "Interview", status: "Pending", team: "Dev Team", note: "" },
+        { id: 2, name: "Bob", stage: "Quiz", status: "Pending", team: "Design Team", note: "" },
+        { id: 3, name: "Charlie", stage: "Laptop Acquiring", status: "Pending", team: "HR Team", note: "" }
     ];
 
-    // Render the workers list
-    function renderWorkers() {
+    // Render workers dynamically
+    function renderWorkers(workers) {
         workerList.innerHTML = "";
         workers.forEach(worker => {
             const li = document.createElement("li");
             li.classList.add("worker-item");
             li.innerHTML = `
-                <p><strong>${worker.name}</strong> (${worker.team}) - ${worker.currentStage}</p>
+                <p><strong>${worker.name}</strong> (${worker.team}) - ${worker.stage}</p>
                 <p>Status: ${worker.status}</p>
                 <textarea id="note-${worker.id}" placeholder="Add a note">${worker.note}</textarea>
                 <button class="approve-btn" data-id="${worker.id}">Approve</button>
-                <button class="terminate-btn" data-id="${worker.id}">Terminate</button>
             `;
             workerList.appendChild(li);
         });
     }
 
-    // Event listener for approving or terminating the worker's process
+    // Event listener for approve/terminate actions
     workerList.addEventListener("click", function (event) {
         if (event.target.classList.contains("approve-btn")) {
             const workerId = event.target.getAttribute("data-id");
-            changeWorkerStatus(workerId, "Approved", "Move to next stage");
+            const note = document.getElementById(`note-${workerId}`).value;
+            updateWorkerStatus(workerId, "Approved", note);
         } else if (event.target.classList.contains("terminate-btn")) {
             const workerId = event.target.getAttribute("data-id");
-            changeWorkerStatus(workerId, "Terminated", "Terminated from process");
+            const note = document.getElementById(`note-${workerId}`).value;
+            updateWorkerStatus(workerId, "Terminated", note);
         }
     });
 
-    // Change worker status and add a note
-    function changeWorkerStatus(workerId, status, note) {
-        const worker = workers.find(w => w.id === parseInt(workerId));
+    // Function to update worker status
+    function updateWorkerStatus(workerId, status, note) {
+        const worker = workers.find(worker => worker.id === parseInt(workerId));
         if (worker) {
             worker.status = status;
             worker.note = note;
-            renderWorkers(); // Re-render the list after status change
+            renderWorkers(workers);
         }
     }
 
-    // Add new worker functionality (fake data for now)
+    // Add worker functionality (simulate adding a worker)
     addWorkerBtn.addEventListener("click", function () {
         const newWorker = {
-            id: workers.length + 1,
-            name: `Worker ${workers.length + 1}`,
-            team: "Example Team",
-            currentStage: "Interview",
+            id: Date.now(), // Using timestamp as worker ID for demo
+            name: `Worker ${Date.now()}`,
+            stage: "Interview",
             status: "Pending",
+            team: "New Team",
             note: ""
         };
         workers.push(newWorker);
-        renderWorkers(); // Re-render list with the new worker
+        renderWorkers(workers);
     });
 
-    // Save button functionality to simulate saving
+    // Save button functionality
     saveBtn.addEventListener("click", function () {
-        const notes = {};
-        workers.forEach(worker => {
-            const noteField = document.getElementById(`note-${worker.id}`);
-            if (noteField) {
-                notes[worker.id] = noteField.value;
-            }
-        });
-        console.log("Saving workers data:", workers);
-        console.log("Notes:", notes);
         alert("Changes saved!");
     });
 
-    // Initial rendering of the workers list
-    renderWorkers();
+    // Initial render of workers
+    renderWorkers(workers);
 });
