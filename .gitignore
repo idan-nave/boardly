@@ -1,0 +1,58 @@
+# Java build files
+*.class
+*.jar
+*.war
+*.ear
+target/
+out/
+
+# Eclipse and IntelliJ IDEA project files
+.idea/
+.project
+.settings/
+*.iml
+
+# Maven / Gradle
+/.mvn/
+/build/
+/target/
+/*.log
+*.bak
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Node modules (if any, since you might use JS for frontend)
+node_modules/
+
+# Frontend build directories
+/dist
+/build
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# Database files
+*.sql
+*.sqlite
+
+# JavaScript files (in case they have build directories or package manager related files)
+*.env
+*.cache
+
+# Java file-specific (in case you're using local development tools or IDEs)
+*.swp
+*.swo
+
+# Configuration files
+*.config
+*.conf
+
+# Custom
+*.db
+`
+
