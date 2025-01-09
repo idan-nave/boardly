@@ -1,29 +1,34 @@
 const login = document.getElementById('login');
-login.addEventListener('click', () => {
-    const username = document.querySelectorAll('#first input');
-    const password = document.querySelectorAll('#password input');
+login.addEventListener('click', (event) => {
+    event.preventDefault();  // מונע רענון הדף בעת לחיצה על כפתור ה-login
+
+    const username = document.querySelector('#first').value;   // לא צריך לשנות
+const password = document.querySelector('#password').value;  // גם לא צריך לשנות
+
 
     const loginData = {
-        usernameObject : username,
-        passwordObject : password
-    }
+        username: username,  // השתמש ב-username כ-string
+        password: password   // השתמש ב-password כ-string
+    };
 
-    fetch('http://localhost:8080/test', {  // Change '/api/login' to your actual server URL
-        method: 'POST',  // POST method
+    fetch('http://localhost:8080/login', {  // כתובת ה-URL של השרת
+        method: 'POST',  // שיטה POST
         headers: {
-            'Content-Type': 'application/json'  // Indicate the request contains JSON data
+            'Content-Type': 'application/json'  // הצהרה על כך שהנתונים הם בפורמט JSON
         },
-        body: JSON.stringify(loginData)  // Convert the login data to a JSON string
+        body: JSON.stringify(loginData)  // המרת הנתונים ל-JSON
     })
-    .then(response => response.json())  // Parse the JSON response from the server
+    .then(response => response.json())  // פענוח התגובה כ-JSON
     .then(data => {
-        console.log('Login Response:', data);  // Log the response from the server
-        alert('Login successful!');
+        console.log('Login Response:', data);  // הדפסת התגובה ב-console
+        if (data.success) {
+            alert('Login successful!');  // אם ההתחברות הצליחה
+        } else {
+            alert('Login failed!');  // אם ההתחברות נכשלה
+        }
     })
     .catch(error => {
-        console.error('Error:', error);  // Handle any errors
+        console.error('Error:', error);  // טיפול בשגיאות
         alert('Login failed!');
     });
-
-
 });

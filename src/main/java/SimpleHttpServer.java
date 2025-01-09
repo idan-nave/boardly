@@ -1,4 +1,6 @@
 import com.sun.net.httpserver.HttpServer;
+import handlers.LoginHandler;
+
 import java.net.InetSocketAddress;
 
 public class SimpleHttpServer {
@@ -8,12 +10,12 @@ public class SimpleHttpServer {
 
         // הגדרת ה-Handlers
 //        server.createContext("/register", new RegisterHandler());
-//        server.createContext("/login", new LoginHandler());
+        server.createContext("/login", new LoginHandler());
 //        server.createContext("/dashboard", new DashboardHandler());
 //        server.createContext("/process", new ProccessHandler());
 //        server.createContext("/teams", new TeamsHandler());
 //        server.createContext("/addWorker", new AddWorkerHandler());
-        server.createContext("/test", new TestHandler());
+//        server.createContext("/test", new TestHandler());
         // התחלת השרת
         server.start();
         System.out.println("Server started on http://localhost:8080");
