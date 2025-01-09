@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+
 public class DatabaseUtil {
     // חיבור לבסיס הנתונים
     public static Connection getConnection() throws Exception {
