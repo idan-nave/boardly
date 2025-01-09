@@ -1,9 +1,12 @@
-import com.sun.net.httpserver.HttpHandler;
+package handlers;
+
 import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.OutputStream;
+import utils.DatabaseUtil;  // הוסף את הייבוא של מחלקת DatabaseUtil
 
 public class LoginHandler implements HttpHandler {
 
@@ -29,8 +32,15 @@ public class LoginHandler implements HttpHandler {
             String username = extractJsonField(requestJson, "username");
             String password = extractJsonField(requestJson, "password");
 
+            // הדפסת הנתונים שנשלחו
+            System.out.println("Received username: " + username);
+            System.out.println("Received password: " + password);
+
             // קריאה לפונקציה כדי לבדוק אם המשתמש והסיסמה נכונים
-            boolean isAuthenticated = DatabaseUtil.authenticateUser(username, password);
+            boolean isAuthenticated = DatabaseUtil.authenticateUser(username, password);  // שימוש במחלקה DatabaseUtil
+
+            // הדפסת התוצאה של האותנטיקציה
+            System.out.println("Authentication result: " + isAuthenticated);
 
             // אם המשתמש קיים והסיסמה נכונה
             String response;
@@ -39,8 +49,6 @@ public class LoginHandler implements HttpHandler {
                 response = "{\"success\": true, \"message\": \"Login Successful!\"}";
                 statusCode = 200; // Success
             } else {
-                // במקרה של שם משתמש לא נכון
-                System.out.println("hey");
                 response = "{\"success\": false, \"message\": \"Invalid username or password!\"}";
                 statusCode = 401; // Unauthorized
             }
