@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class TeamService {
 
     // Method to get all team names
-    public ArrayList<String> getAllTeamNames() {
+    public static ArrayList<String> getAllTeamNames() {
         String sql = "SELECT team_name FROM teams";
         ArrayList<String> teamNames = new ArrayList<>(); // Initialize the ArrayList
 

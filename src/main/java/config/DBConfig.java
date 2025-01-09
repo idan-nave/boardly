@@ -1,4 +1,4 @@
-package com.company.onboarding.backend.config;
+package config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +9,7 @@ public class DBConfig {
     // DB_USER=root
     // DB_PASS=secretpassword
     // Get DB credentials from environment variables
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/onboardly_db";
+    private static final String DB_URL = "jdbc:mysql://localhost:8889/onboardly_db";
     private static final String DB_USER = "root";
     private static final String DB_PASS = "secretpassword";
 
