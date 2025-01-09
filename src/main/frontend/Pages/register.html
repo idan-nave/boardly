@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Registration Form</title>
+  <link rel="stylesheet" href="../assets/css/register.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Title section -->
+    <div class="title">OnBoardly Registration</div>
+    <div class="content">
+      <!-- Registration form -->
+      <form id="registrationForm" action="#">
+        <div class="user-details">
+          <!-- Input for Company Name -->
+          <div class="input-box">
+            <span class="details">Company Name</span>
+            <input type="text" id="companyName" placeholder="Enter your company name" required>
+          </div>
+          <!-- Input for Address -->
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" id="address" placeholder="Enter your address" required>
+          </div>
+          <!-- Input for Email -->
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" id="email" placeholder="Enter your email" required>
+          </div>
+          <!-- Input for Username -->
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" id="username" placeholder="Enter your username" required>
+          </div>
+          <!-- Input for Password -->
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" id ="password" placeholder="Enter your password" required minlength="8">
+          </div>
+          <!-- Input for Confirm Password -->
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" id="confirmPassword" placeholder="Confirm your password" required minlength="8">
+          </div>
+        </div>
+        <!-- Submit button -->
+        <div class="button">
+          <input type="submit" id="submit" value="Register">
+        </div>
+        <div id="errorMessage" style="color: red; text-align: center; margin-top: 10px;"></div>
+        <div class="back-to-home">
+         <a href="OnBoardly-homepage.html">Back to Home</a>
+      </form>
+    </div>
+  </div>  
+ <!-- Link the JavaScript file here -->
+ <script src="../controllers/registerController.js"></script>
+</body>
+</html>
