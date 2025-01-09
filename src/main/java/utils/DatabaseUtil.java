@@ -8,9 +8,9 @@ import java.sql.ResultSet;
 public class DatabaseUtil {
     // חיבור לבסיס הנתונים
     public static Connection getConnection() throws Exception {
-        String url = "jdbc:mysql://localhost:3306/onboardly_db"; // כתובת ה-URL לבסיס הנתונים
-        String user = "your_username";  // שם המשתמש לבסיס הנתונים
-        String password = "your_password";  // הסיסמה לבסיס הנתונים
+        String url = "jdbc:mysql://localhost:8889/onboardly_db"; // כתובת ה-URL לבסיס הנתונים
+        String user = "root";  // שם המשתמש לבסיס הנתונים
+        String password = "secretpassword";  // הסיסמה לבסיס הנתונים
 
         // חיבור
         Connection connection = DriverManager.getConnection(url, user, password);
