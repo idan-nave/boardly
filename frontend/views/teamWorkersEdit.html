@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Edit Page</title>
+    <link rel="stylesheet" href="/frontend/assets/css/teamWorkersEdit.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header Section -->
+        <header id="title">
+            <h1>Team: Example Team</h1> <!-- Display Team Name -->
+            <p>Edit team details and manage workers</p>
+        </header>
+
+        <!-- Process Selection Section -->
+        <div class="process-selection">
+            <label for="process">Choose Process:</label>
+            <select id="process">
+                <option value="process-1">Process 1</option>
+                <option value="process-2">Process 2</option>
+                <option value="process-3">Process 3</option>
+            </select>
+        </div>
+
+        <!-- Workers List Section -->
+        <div class="worker-list">
+            <h2>Team Workers</h2>
+            <ul id="worker-list">
+                <!-- Worker List Items Will Go Here -->
+            </ul>
+        </div>
+
+        <!-- Add Worker Button -->
+        <button id="add-worker-btn" class="action-btn">Add New Worker</button>
+
+        <!-- Save Data Button -->
+        <button id="save-btn" class="action-btn">Save Changes</button>
+    </div> 
+
+    <script src="../../frontend/assets/js/teamEdit.js"></script> <!-- Include JavaScript for interaction -->
+</body>
+</html>

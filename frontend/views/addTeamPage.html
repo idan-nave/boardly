@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Team</title>
+    <link rel="stylesheet" href="../assets/css/addTeamPageStyle.css">
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Add Team</h2>
+    <label for="companyName">Your team name:</label>
+    <input type="text" id="companyName" placeholder="Enter team name">
+
+    <label for="companyManager">Team manager:</label>
+    <input type="text" id="companyManager" placeholder="Enter team manager's name">
+
+    <label for="companyManager">Team's process:</label>
+    <select id="process" name="choose ">
+    </select>
+
+    <button id="add-team">  Add Team  </button>
+
+</div>
+
+<script src="../controllers/teamControllerGroup/addTeamController.js"></script>
+<script src="../controllers/teamControllerGroup/populateProcessesList.js"></script>
+
+
+</body>
+</html>

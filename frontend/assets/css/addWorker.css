@@ -1,0 +1,134 @@
+/* Reusable Styles Palette */
+:root {
+    /* Colors For use in the App */
+    --color-primary: #004085;
+    --color-primary-light: #0069d9;
+    --color-accent: #28a745;
+    --color-accent-hover: #218838;
+    --color-background: #f9f9f9;
+    --color-text: #333;
+    --color-white: #fff;
+
+    /* Font Sizes */
+    --font-size-small: 0.875rem;
+    --font-size-medium: 1rem;
+    --font-size-large: 1.5rem;
+    --font-size-xlarge: 2.5rem;
+
+    /* Spacing */
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+    --spacing-xlarge: 5rem;
+
+    /* Border Radius */
+    --border-radius: 8px;
+
+    /* HOVER BUTTON Transition */
+    --transition: all 0.3s ease-in-out;
+
+    /* Shadows */
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: var(--spacing-medium);
+    text-align: left;
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--color-white);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.form-group label {
+    font-size: var(--font-size-medium);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-small);
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    padding: var(--spacing-small);
+    font-size: var(--font-size-medium);
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+    width: 100%;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 8px rgba(0, 64, 133, 0.2);
+}
+
+.form-group select {
+    font-size: var(--font-size-medium);
+    cursor: pointer;
+}
+
+/* Cancel Button */
+#cancel-btn {
+    background-color: var(--color-primary-light);
+    color: var(--color-white);
+    margin-top: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+    padding: var(--spacing-small) var(--spacing-medium);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--font-size-medium);
+    transition: var(--transition);
+}
+
+#cancel-btn:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+/* Submit Button */
+#submit-btn {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    margin-top: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+    padding: var(--spacing-small) var(--spacing-medium);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--font-size-medium);
+    transition: var(--transition);
+}
+
+#submit-btn:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .form-group input,
+    .form-group select {
+        width: 100%;
+    }
+}

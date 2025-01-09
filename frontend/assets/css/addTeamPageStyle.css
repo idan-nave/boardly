@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6A11CB, #2575FC);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    text-align: center; /* Center text content globally */
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 30%;
+    height: 30vh; /* Take 80% of the vertical height */
+    max-width: 1400px; /* Ensure it doesn't get too wide */
+    padding: 40px; /* Increase padding for better spacing */
+    text-align: center; /* Center text inside the container */
+    display: flex;
+    flex-direction: column; /* Arrange content vertically */
+    justify-content: space-between; /* Space out content evenly */
+
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding is included in the element's total width */
+}
+
+button {
+    padding: 10px 15px;
+    background: linear-gradient(to right, #2575FC, #6A11CB);
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* button:hover {
+    background-color: #45a049;
+} */
+
+#workers-list {
+    margin-top: 15px;
+    padding-left: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    background-color: #f1f1f1;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between; /* Aligns text and potential delete button */
+    align-items: center;
+}
+
+li button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+li button:hover {
+    background-color: #e53935;
+}
